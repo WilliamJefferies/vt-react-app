@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const ResultBoxContainer = styled.div`
+const SearchBoxContainer = styled.div`
 position: static;
 width: 624px;
 height: 48px;
@@ -10,11 +10,11 @@ flex: none;
 align-self: center;
 `
 
-export const ResultBox = () => {
+export const SearchBox = () => {
 
     return (
-        <ResultBoxContainer>
-
-        </ResultBoxContainer>
+        <SearchBoxContainer>
+            search box container
+        </SearchBoxContainer>
     )
 }

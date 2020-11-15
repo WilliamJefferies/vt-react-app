@@ -1,21 +1,26 @@
-export const GET_LOT_CODES_REQUEST = 'GET_LOT_CODES_REQUEST';
-export const getLotCodesRequest = () => ({
-    type: GET_LOT_CODES_REQUEST
-})
+export const LOAD_LOT_CODES_IN_PROGRESS = 'LOAD_LOT_CODES_IN_PROGRESS';
+export const loadLotCodesInProgress = () => ({
+    type: LOAD_LOT_CODES_IN_PROGRESS
+});
 
-export const GET_LOT_CODES_FAILURE = 'GET_LOT_CODES_FAILURE';
-export const getLotCodesFailure = () => ({
-    type: GET_LOT_CODES_FAILURE
-})
+export const LOAD_LOT_CODES_FAILURE = 'LOAD_LOT_CODES_FAILURE';
+export const loadLotCodesFailure = () => ({
+    type: LOAD_LOT_CODES_FAILURE
+});
 
-export const GET_LOT_CODES_SUCCESS = 'GET_LOT_CODES_FAILURE';
-export const getLotCodesSuccess = (lotCodes) => ({
+export const LOAD_LOT_CODES_SUCCESS = 'LOAD_LOT_CODES_FAILURE';
+export const loadLotCodesSuccess = (lotCodes) => ({
     payload: lotCodes,
-    type: GET_LOT_CODES_SUCCESS
-})
+    type: LOAD_LOT_CODES_SUCCESS
+});
 
 export const SELECT_LOT_CODE = 'SELECT_LOT_CODE';
-export const setLotCode = (lotCode) => ({
+export const selectLotCode = (lotCode) => ({
     payload: lotCode,
     type: SELECT_LOT_CODE
-})
+});
+
+export const UNSELECT_LOT_CODE = 'UNSELECT_LOT_CODE';
+export const unSelectLotCode = () => ({
+    type: UNSELECT_LOT_CODE
+});
