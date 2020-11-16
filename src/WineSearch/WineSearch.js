@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {ResultList} from "../Common/ResultList";
 import {loadLotCodes} from "./thunks";
 
-import {getLotCodesLoading, getSearchInput, getSearchResults} from "./selectors";
+import {isLoading, loadSearchInput, loadSearchResults} from "./selectors";
 import {searchTextCleared, searchTextInput} from "./actions";
 
 const TitleContainer = styled.div`
@@ -37,10 +37,10 @@ flex: none;
 align-self: center;
 `
 
-const WineSearch = ({startLoadingLotCodes, isLoading, searchResults, onInput}) => {
+const WineSearch = ({startLoadLotCodes, isLoading, searchResults, onInput}) => {
     const [inputValue, setInputValue] = useState('');
     useEffect(() => {
-        startLoadingLotCodes();
+        startLoadLotCodes();
     }, []);
     return (
         <WineSearchContainer>
@@ -62,13 +62,13 @@ const WineSearch = ({startLoadingLotCodes, isLoading, searchResults, onInput}) =
 }
 
 const mapStateToProps = state => ({
-    isLoading: getLotCodesLoading(state),
-    searchResults: getSearchResults(state),
-    inputValue: getSearchInput(state)
+    isLoading: isLoading(state),
+    searchResults: loadSearchResults(state),
+    inputValue: loadSearchInput(state)
 })
 
 const mapDispatchToProps = dispatch => ({
-    startLoadingLotCodes: () => dispatch(loadLotCodes()),
+    startLoadLotCodes: () => dispatch(loadLotCodes()),
     onInput: (input) => dispatch(searchTextInput(input)),
     onSearchCleared: () => dispatch(searchTextCleared())
 });
