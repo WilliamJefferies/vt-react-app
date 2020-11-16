@@ -1,5 +1,7 @@
 import styled from 'styled-components'
+import {connect} from 'react-redux';
 import WineSearch from "./WineSearch/WineSearch";
+import {getPage} from "./router";
 
 const AppContainer = styled.div`
     font-family: Montserrat;
@@ -10,13 +12,17 @@ const AppContainer = styled.div`
 `
 
 
+// todo move to switch statement and store these vars in router file
+const app = ({page}) => {
+    return (
+        <AppContainer>
+            {page === 'search'? <WineSearch/>: null}
+        </AppContainer>
+    );
+};
 
-function App() {
-  return (
-    <AppContainer>
-       <WineSearch/>
-    </AppContainer>
-  );
-}
+const mapStateToProps = state => ({
+  page: getPage(state)
+});
 
-export default App;
+export default connect(mapStateToProps)(app)

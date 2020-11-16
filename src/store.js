@@ -5,14 +5,18 @@ import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 
 import {breakDown} from "./ProductView/reducers";
 import {search, selected} from "./WineSearch/reducers";
+import router from './router'
 
 import thunk from 'redux-thunk'
 import {composeWithDevTools} from "redux-devtools-extension";
 
+
+
 const reducers = {
     breakDown,
     search,
-    selected
+    selected,
+    router
 };
 
 const persistConfig = {
