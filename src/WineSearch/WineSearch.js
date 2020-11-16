@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {connect} from 'react-redux';
+import {ResultList} from "../Common/ResultList";
+import {loadLotCodes} from "./thunks";
 
-import {SearchBox} from "./SearchBox";
+import {getLotCodesLoading, getSearchInput, getSearchResults} from "./selectors";
+import {searchTextCleared, searchTextInput} from "./actions";
 
 const TitleContainer = styled.div`
 position: static;
@@ -25,20 +28,49 @@ const WineSearchContainer = styled.div`
 
 `
 
+const SearchBoxInput = styled.input`
+position: static;
+width: 624px;
+height: 48px;
+background: #FFFFFF;
+flex: none;
+align-self: center;
+`
 
-export const WineSearch = () => {
+const WineSearch = ({startLoadingLotCodes, isLoading, searchResults, onInput}) => {
+    const [inputValue, setInputValue] = useState('');
+    useEffect(() => {
+        startLoadingLotCodes();
+    }, []);
     return (
         <WineSearchContainer>
             <TitleContainer>
                 wine search
             </TitleContainer>
-            <SearchBox/>
+            <SearchBoxInput
+            type="text"
+            placeholder="placeholder here"
+            value={inputValue}
+            onChange={e => {
+                setInputValue(e.target.value)
+                onInput(inputValue)
+            }}
+            />
+            <ResultList results={searchResults} isLoading={isLoading} isSearch={true} setSearch={(f) => f = f}/>
         </WineSearchContainer>
     )
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+    isLoading: getLotCodesLoading(state),
+    searchResults: getSearchResults(state),
+    inputValue: getSearchInput(state)
+})
 
-const mapDispatchToProps = state => ({});
+const mapDispatchToProps = dispatch => ({
+    startLoadingLotCodes: () => dispatch(loadLotCodes()),
+    onInput: (input) => dispatch(searchTextInput(input)),
+    onSearchCleared: () => dispatch(searchTextCleared())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(WineSearch)

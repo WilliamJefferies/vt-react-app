@@ -2,22 +2,51 @@ import {
     LOAD_LOT_CODES_SUCCESS,
     LOAD_LOT_CODES_FAILURE,
     SELECT_LOT_CODE, UNSELECT_LOT_CODE,
-    LOAD_LOT_CODES_IN_PROGRESS
+    LOAD_LOT_CODES_IN_PROGRESS,
+    SEARCH_TEXT_CLEARED,
+    SEARCH_TEXT_INPUT
 } from "./actions";
 
-const initialState = {isLoading: false, data: []}
+const initialState = {isLoading: false, data: [], input: ''}
 
-export const searchOpts = (state = initialState, action) => {
+export const search = (state = initialState, action) => {
     const {type, payload} = action;
     switch (type) {
         case LOAD_LOT_CODES_IN_PROGRESS:
+            return {
+                ...state,
+                isLoading: false,
+            }
         case LOAD_LOT_CODES_FAILURE:
+            return {
+                ...state,
+                isLoading: false,
+            }
         case LOAD_LOT_CODES_SUCCESS:
+            const {lotCodes} = payload
+            return {
+                ...state,
+                isLoading: false,
+                data: lotCodes
+
+            }
+        case SEARCH_TEXT_INPUT:
+            return {
+                ...state,
+                input: payload
+            }
+        case SEARCH_TEXT_CLEARED:
+            return {
+                ...state,
+                input: ''
+            }
+        default:
+            return state
+
     }
-    return state
 };
 
-export const search = (state = '', action) => {
+export const selected = (state = '', action) => {
     const {type, payload} = action;
     switch (type) {
         case SELECT_LOT_CODE:

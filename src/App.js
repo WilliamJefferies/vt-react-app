@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {WineSearch} from "./WineSearch/WineSearch";
+import WineSearch from "./WineSearch/WineSearch";
 
 const AppContainer = styled.div`
     font-family: Montserrat;
