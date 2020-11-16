@@ -30,13 +30,9 @@ This is a simple react app that searches for wine across various lotcodes and pr
 │   ├───selectors.js
 │   └───thunks.js
 ├───App.js
-├───App.test.js
 ├───index.css
 ├───index.js
-├───logo.svg
-├───reportWebVitals.js
 ├───router.js
-├───setupTests.js
 └───store.js
 ```
 
