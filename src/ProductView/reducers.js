@@ -9,6 +9,8 @@ import {
 } from "./actions";
 
 
+//set meta merging with success
+
 const breakDownInitialState = {
     isLoading: false,
     data: [],
@@ -27,7 +29,6 @@ export const breakDown = (state = breakDownInitialState, action) => {
         case LOAD_BREAK_DOWN_OPTS_IN_PROGRESS:
         case LOAD_BREAK_DOWN_OPTS_SUCCESS:
         case LOAD_BREAK_DOWN_OPTS_FAILURE:
-        case SET_META:
     }
     return state
 }
