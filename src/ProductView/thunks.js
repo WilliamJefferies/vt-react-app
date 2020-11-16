@@ -25,7 +25,6 @@ export const loadLotCodes = (breakdownStrategy, lotCode) => async dispatch => {
             }
         });
         const res = await response.json();
-        dispatch(setMeta(res.meta)) //todo merge two reducers, unnescairy logic here
         dispatch(loadBreakDownSuccess(res.breakdown))
     } catch (e) {
         dispatch(loadBreakDownFailure())
