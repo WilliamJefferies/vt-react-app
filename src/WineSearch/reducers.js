@@ -15,7 +15,7 @@ export const search = (state = initialState, action) => {
         case LOAD_LOT_CODES_IN_PROGRESS:
             return {
                 ...state,
-                isLoading: false,
+                isLoading: true,
             }
         case LOAD_LOT_CODES_FAILURE:
             return {
