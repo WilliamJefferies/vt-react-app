@@ -42,4 +42,4 @@ This is a simple react app that searches for wine across various lotcodes and pr
 ```
 
 ### Start Server
-```npm start```
+```npm i & npm start```
