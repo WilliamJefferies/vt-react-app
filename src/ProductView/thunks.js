@@ -12,7 +12,9 @@ export const displayAlert = text => () => {
 
 // todo api factory layer
 
-
+/*
+Current WIP
+ */
 export const loadLotCodes = (breakdownStrategy, lotCode) => async dispatch => {
     let api = `http://localhost:8080/api/${breakdownStrategy}/${lotCode}` //todo put in config
     try {
