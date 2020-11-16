@@ -1,28 +1,20 @@
-export const META_DATA_REQ = 'META_DATA_REQ';
-export const metaDataReq = () => ({
-    type: META_DATA_REQ
-});
-
-export const META_DATA_SUCCESS = 'META_DATA_SUCCESS';
-export const metaDataSuccess = (meta) => ({
-    type: META_DATA_SUCCESS,
+export const SET_META = 'SET_META';
+export const setMeta = (meta) => ({
+    type: SET_META,
     payload: meta
 });
-export const META_DATA_FAILURE = 'META_DATA_FAILURE';
-export const metaDataFailure = () => ({
-    type: META_DATA_FAILURE,
-});
+
 export const BREAK_DOWN_REQ = 'BREAK_DOWN_REQ';
-export const breakDownReq = () => ({
+export const loadBreakDownInProgress = () => ({
     type: BREAK_DOWN_REQ,
 });
 export const BREAK_DOWN_SUCCESS = 'BREAK_DOWN_SUCCESS';
-export const breakDownSuccess = (data) => ({
+export const loadBreakDownSuccess = (data) => ({
     type: BREAK_DOWN_SUCCESS,
     payload: data
 });
 export const BREAK_DOWN_FAILURE = 'BREAK_DOWN_FAILURE';
-export const breakDownFailure = () => ({
+export const loadBreakDownFailure = () => ({
     type: BREAK_DOWN_FAILURE
 });
 

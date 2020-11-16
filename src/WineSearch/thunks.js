@@ -8,7 +8,7 @@ import {
 
 export const displayAlert = text => () => {
     alert(text);
-};
+};  //todo merge to one file
 
 let api = 'http://localhost:8080/api/lotcodes' //todo put in config
 
