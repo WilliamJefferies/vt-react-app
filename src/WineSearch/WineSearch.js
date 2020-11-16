@@ -56,7 +56,7 @@ const WineSearch = ({startLoadingLotCodes, isLoading, searchResults, onInput}) =
                 onInput(inputValue)
             }}
             />
-            <ResultList results={searchResults} isLoading={isLoading} isSearch={true} setSearch={(f) => f = f}/>
+            <ResultList results={searchResults} isLoading={isLoading} clickable={true} clickHandler={(f) => f = f}/>
         </WineSearchContainer>
     )
 }

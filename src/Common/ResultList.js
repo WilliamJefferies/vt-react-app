@@ -8,18 +8,16 @@ import {selectLotCode} from "../WineSearch/actions";
 const ResultListContainer = styled.div`
 
 `
-export const ResultList = ({isLoading, results, isSearch = false, setSearch}) => {
-    //map results to resultBox
-    console.log(results)
+export const ResultList = ({isLoading, results, clickable = false, clickHandler}) => {
 
     const loadingMessage = <div>Loading Results...</div>
     const content = (
         <ResultListContainer>
             {results.map(result =>
                 <ResultBox
-                    name={isSearch ? result : null}
-                    percentage={isSearch ? null : result.percentage}
-                    handleClick={isSearch ? setSearch: (f) => f = f}
+                    name={clickable ? result : null}
+                    percentage={clickable ? null : result.percentage}
+                    handleClick={clickable ? clickHandler: (f) => f = f}
                 />
             )}
         </ResultListContainer>
