@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {ResultList} from "../Common/ResultList";
 import {loadLotCodes} from "./thunks";
 
-import {isLoading, loadSearchInput, loadSearchResults} from "./selectors";
+import {isLoading, loadSearchResults} from "./selectors";
 import {searchTextCleared, searchTextInput} from "./actions";
 
 const TitleContainer = styled.div`
@@ -63,8 +63,7 @@ const WineSearch = ({startLoadLotCodes, isLoading, searchResults, onInput}) => {
 
 const mapStateToProps = state => ({
     isLoading: isLoading(state),
-    searchResults: loadSearchResults(state),
-    inputValue: loadSearchInput(state)
+    searchResults: loadSearchResults(state)
 })
 
 const mapDispatchToProps = dispatch => ({
