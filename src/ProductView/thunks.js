@@ -8,7 +8,9 @@ import {
 
 export const displayAlert = text => () => {
     alert(text);
-}; //todo merge to one file
+};
+
+// todo api factory layer
 
 
 export const loadLotCodes = (breakdownStrategy, lotCode) => async dispatch => {

@@ -8,7 +8,9 @@ import {
 
 export const displayAlert = text => () => {
     alert(text);
-};  //todo merge to one file
+};
+
+// todo api factory layer
 
 let api = 'http://localhost:8080/api/lotcodes' //todo put in config
 
