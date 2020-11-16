@@ -13,6 +13,7 @@ import {
 
 const breakDownInitialState = {
     isLoading: false,
+    isLoadingOpts: false,
     data: [],
     opts: [],
     type: '',
