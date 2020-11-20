@@ -1,8 +1,8 @@
 # VT-React-App (WIP)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Light weight react app that searches for wine across various lot codes and provides break downs.
 
-This is a simple react app that searches for wine across various lotcodes and provides breakdowns.
+Uses [Create React App]("https://create-react-app.dev")
 
 ## Technology used
 * React
