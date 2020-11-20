@@ -1,4 +1,4 @@
-# VT-React-App (WIP)
+# Wine App React Redux (WIP)
 
 Light weight react app that searches for wine across various lot codes and provides break downs.
 
