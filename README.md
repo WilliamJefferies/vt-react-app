@@ -1,6 +1,6 @@
-# Wine App React Redux (WIP)
+# Wine App React (WIP)
 
-Light weight react app that searches for wine across various lot codes and provides break downs.
+Light weight react redux app that searches for wine across various lot codes and provides break downs.
 
 Uses [Create React App]("https://create-react-app.dev")
 
